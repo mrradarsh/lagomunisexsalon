@@ -1,0 +1,2860 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lagom Unisex Salon</title>
+</head>
+
+<body>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    :root {
+      --ink: #120D08;
+      --cream: #F7F2EA;
+      --warm: #EDE4D4;
+      --gold: #B8963E;
+      --gold2: #D4AF6A;
+      --gold3: #F0D49A;
+      --rose: #C4816A;
+      --sage: #7A8C72;
+      --txt: #2C1F0E;
+      --txt2: #6B5540;
+      --txt3: #A08060;
+    }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--ink);
+      color: var(--cream);
+      overflow-x: hidden;
+      cursor: default
+    }
+
+    .marquee-wrap {
+      overflow: hidden;
+      border-top: 1px solid rgba(184, 150, 62, 0.25);
+      border-bottom: 1px solid rgba(184, 150, 62, 0.25);
+      padding: 10px 0;
+      background: rgba(184, 150, 62, 0.04)
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 0;
+      animation: scroll 22s linear infinite;
+      width: max-content
+    }
+
+    .marquee-item {
+      white-space: nowrap;
+      padding: 0 2.5rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.25em;
+      color: var(--gold3);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem
+    }
+
+    .marquee-item::after {
+      content: '✦';
+      color: var(--gold);
+      font-size: 0.75rem
+    }
+
+    @keyframes scroll {
+      from {
+        transform: translateX(0)
+      }
+
+      to {
+        transform: translateX(-50%)
+      }
+    }
+
+    nav {
+      padding: 1.4rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(184, 150, 62, 0.15)
+    }
+
+    .logo-mark {
+      display: flex;
+      flex-direction: column;
+      align-items: center
+    }
+
+    .logo-top {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      color: var(--gold2)
+    }
+
+    .logo-line {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 3px 0
+    }
+
+    .logo-sub {
+      font-size: 0.75rem;
+      letter-spacing: 0.55em;
+      color: var(--gold3);
+      text-transform: uppercase
+    }
+
+    .nav-r {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.95rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(240, 212, 154, 0.9);
+      transition: color 0.4s
+    }
+
+    .nav-links a:hover {
+      color: var(--gold2)
+    }
+
+    .nav-tel {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--gold3);
+      letter-spacing: 0.05em
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 5rem 3rem 3rem;
+      gap: 4rem;
+      position: relative;
+      overflow: hidden
+    }
+
+    .hero-deco {
+      position: absolute;
+      right: -80px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      border: 1px solid rgba(184, 150, 62, 0.08);
+      pointer-events: none
+    }
+
+    .hero-deco::before {
+      content: '';
+      position: absolute;
+      inset: 30px;
+      border-radius: 50%;
+      border: 1px solid rgba(184, 150, 62, 0.06)
+    }
+
+    .hero-deco::after {
+      content: '';
+      position: absolute;
+      inset: 80px;
+      border-radius: 50%;
+      border: 1px solid rgba(184, 150, 62, 0.04)
+    }
+
+    .hero-left {
+      z-index: 1
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 2rem
+    }
+
+    .eyebrow-line {
+      width: 28px;
+      height: 1px;
+      background: var(--gold)
+    }
+
+    .eyebrow-text {
+      font-size: 0.85rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold)
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 400;
+      line-height: 1.12;
+      margin-bottom: 1.8rem
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--gold2)
+    }
+
+    h1 span {
+      display: block
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: rgba(240, 212, 154, 0.95);
+      max-width: 400px;
+      margin-bottom: 2.5rem
+    }
+
+    .cta-row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem
+    }
+
+    .cta-main {
+      background: var(--gold);
+      color: var(--ink);
+      padding: 0.9rem 2.2rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))
+    }
+
+    .cta-main:hover {
+      background: var(--gold2)
+    }
+
+    .cta-ghost {
+      background: none;
+      border: none;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(240, 212, 154, 0.95);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s;
+      padding: 0
+    }
+
+    .cta-ghost::after {
+      content: '→';
+      transition: transform 0.3s
+    }
+
+    .cta-ghost:hover {
+      color: var(--gold2)
+    }
+
+    .cta-ghost:hover::after {
+      transform: translateX(4px)
+    }
+
+    .hero-right {
+      position: relative;
+      z-index: 1
+    }
+
+    .salon-visual {
+      position: relative;
+      padding: 2rem
+    }
+
+    .visual-frame {
+      border: 1px solid rgba(184, 150, 62, 0.2);
+      padding: 2.5rem;
+      position: relative
+    }
+
+    .visual-frame::before {
+      content: '';
+      position: absolute;
+      top: -6px;
+      left: 20px;
+      right: 20px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent)
+    }
+
+    .visual-frame::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 20px;
+      right: 20px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent)
+    }
+
+    .corner {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-color: var(--gold);
+      border-style: solid;
+      border-width: 0
+    }
+
+    .corner.tl {
+      top: -1px;
+      left: -1px;
+      border-top-width: 1px;
+      border-left-width: 1px
+    }
+
+    .corner.tr {
+      top: -1px;
+      right: -1px;
+      border-top-width: 1px;
+      border-right-width: 1px
+    }
+
+    .corner.bl {
+      bottom: -1px;
+      left: -1px;
+      border-bottom-width: 1px;
+      border-left-width: 1px
+    }
+
+    .corner.br {
+      bottom: -1px;
+      right: -1px;
+      border-bottom-width: 1px;
+      border-right-width: 1px
+    }
+
+    .visual-inner {
+      background: rgba(184, 150, 62, 0.03);
+      padding: 2.5rem;
+      text-align: center
+    }
+
+    .big-initial {
+      font-family: 'Playfair Display', serif;
+      font-size: 7rem;
+      font-weight: 400;
+      color: rgba(184, 150, 62, 0.12);
+      line-height: 1;
+      letter-spacing: -0.05em
+    }
+
+    .visual-tagline {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--gold3);
+      margin-top: 0.5rem
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 2rem;
+      border-top: 1px solid rgba(184, 150, 62, 0.15)
+    }
+
+    .stat {
+      padding: 1.2rem 0.5rem;
+      border-right: 1px solid rgba(184, 150, 62, 0.15);
+      text-align: center
+    }
+
+    .stat:last-child {
+      border-right: none
+    }
+
+    .stat-n {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--gold2)
+    }
+
+    .stat-l {
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold3);
+      margin-top: 2px
+    }
+
+    .strip {
+      background: var(--gold);
+      padding: 1rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem
+    }
+
+    .strip-text {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--ink)
+    }
+
+    .strip-loc {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(18, 13, 8, 0.95)
+    }
+
+    .strip-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--ink);
+      border-radius: 50%;
+      opacity: 0.4
+    }
+
+    .services-section {
+      padding: 5rem 0;
+      background: var(--ink)
+    }
+
+    .sec-header {
+      padding: 0 3rem;
+      margin-bottom: 3.5rem;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between
+    }
+
+    .sec-eyebrow {
+      font-size: 0.9rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.7rem
+    }
+
+    .sec-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+      line-height: 1.15
+    }
+
+    .sec-title em {
+      font-style: italic;
+      color: var(--gold2)
+    }
+
+    .sec-count {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      color: rgba(184, 150, 62, 0.1);
+      font-weight: 400;
+      line-height: 1
+    }
+
+    .services-rail {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid rgba(184, 150, 62, 0.15);
+      border-left: 1px solid rgba(184, 150, 62, 0.15)
+    }
+
+    .srv {
+      border-right: 1px solid rgba(184, 150, 62, 0.15);
+      border-bottom: 1px solid rgba(184, 150, 62, 0.15);
+      padding: 2rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: background 0.4s
+    }
+
+    .srv::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s
+    }
+
+    .srv:hover {
+      background: rgba(184, 150, 62, 0.04)
+    }
+
+    .srv:hover::before {
+      transform: scaleX(1)
+    }
+
+    .srv-num {
+      font-size: 0.9rem;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+      opacity: 1
+    }
+
+    .srv-icon {
+      font-size: 1.4rem;
+      color: rgba(184, 150, 62, 0.4);
+      margin-bottom: 0.8rem;
+      line-height: 1
+    }
+
+    .srv-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+      line-height: 1.3
+    }
+
+    .srv-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem
+    }
+
+    .srv-tag {
+      font-size: 0.85rem;
+      color: var(--gold3);
+      background: rgba(184, 150, 62, 0.15);
+      padding: 0.2rem 0.5rem;
+      letter-spacing: 0.05em
+    }
+
+    .about-section {
+      background: rgba(184, 150, 62, 0.04);
+      border-top: 1px solid rgba(184, 150, 62, 0.15);
+      border-bottom: 1px solid rgba(184, 150, 62, 0.15);
+      padding: 5rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center
+    }
+
+    .about-quote-wrap {
+      position: relative
+    }
+
+    .q-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 8rem;
+      color: rgba(184, 150, 62, 0.12);
+      line-height: 0.7;
+      margin-bottom: -1rem
+    }
+
+    .about-quote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.5rem;
+      line-height: 1.55;
+      color: var(--gold3)
+    }
+
+    .about-attr {
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem
+    }
+
+    .attr-line {
+      width: 24px;
+      height: 1px;
+      background: var(--gold)
+    }
+
+    .attr-text {
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold3)
+    }
+
+    .about-right p {
+      font-size: 1.1rem;
+      line-height: 2;
+      color: rgba(240, 212, 154, 0.95);
+      margin-bottom: 1.2rem
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      margin-top: 2rem;
+      background: rgba(184, 150, 62, 0.15)
+    }
+
+    .pillar {
+      background: var(--ink);
+      padding: 1.2rem;
+      transition: background 0.3s
+    }
+
+    .pillar:hover {
+      background: rgba(184, 150, 62, 0.05)
+    }
+
+    .pillar-icon {
+      color: var(--gold);
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      opacity: 0.7
+    }
+
+    .pillar-t {
+      font-size: 0.95rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold2);
+      margin-bottom: 0.3rem
+    }
+
+    .pillar-d {
+      font-size: 0.95rem;
+      color: var(--gold3);
+      line-height: 1.6
+    }
+
+    .occasions-section {
+      padding: 4rem 3rem;
+      text-align: center
+    }
+
+    .occ-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      justify-content: center;
+      margin-top: 2.5rem;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .occ {
+      border: 1px solid rgba(184, 150, 62, 0.2);
+      padding: 0.55rem 1.4rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(240, 212, 154, 0.95);
+      cursor: default;
+      transition: all 0.3s;
+      clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%)
+    }
+
+    .occ:hover {
+      border-color: var(--gold);
+      color: var(--gold2);
+      background: rgba(184, 150, 62, 0.06)
+    }
+
+    .contact-section {
+      background: var(--ink);
+      padding: 5rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center
+    }
+
+    .contact-left .sec-eyebrow {
+      margin-bottom: 0.7rem
+    }
+
+    .contact-left h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 1.5rem
+    }
+
+    .contact-left h2 em {
+      font-style: italic;
+      color: var(--gold2)
+    }
+
+    .contact-left p {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: rgba(240, 212, 154, 0.95);
+      margin-bottom: 2rem
+    }
+
+    .contact-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem
+    }
+
+    .cbtn {
+      padding: 1rem 2rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.35s;
+      border: none;
+      font-weight: 500;
+      text-align: left
+    }
+
+    .cbtn-primary {
+      background: var(--gold);
+      color: var(--ink);
+      clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px))
+    }
+
+    .cbtn-primary:hover {
+      background: var(--gold2)
+    }
+
+    .cbtn-outline {
+      background: transparent;
+      border: 1px solid rgba(184, 150, 62, 0.3);
+      color: var(--gold3)
+    }
+
+    .cbtn-outline:hover {
+      border-color: var(--gold);
+      background: rgba(184, 150, 62, 0.05)
+    }
+
+    .contact-right {
+      border: 1px solid rgba(184, 150, 62, 0.2);
+      padding: 2.5rem;
+      position: relative
+    }
+
+    .contact-right::before {
+      content: '';
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      right: -12px;
+      bottom: -12px;
+      border: 1px solid rgba(184, 150, 62, 0.08);
+      pointer-events: none;
+      z-index: -1
+    }
+
+    .info-block {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(184, 150, 62, 0.12)
+    }
+
+    .info-block:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none
+    }
+
+    .info-label {
+      font-size: 0.85rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem
+    }
+
+    .info-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--cream);
+      line-height: 1.6
+    }
+
+    .info-val span {
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-size: 1.05rem;
+      color: rgba(240, 212, 154, 0.9);
+      margin-top: 0.2rem;
+      font-style: normal
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.5);
+      border-top: 1px solid rgba(184, 150, 62, 0.12);
+      padding: 2rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem
+    }
+
+    .foot-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      font-weight: 400
+    }
+
+    .foot-services {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap
+    }
+
+    .foot-services span {
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(240, 212, 154, 0.85)
+    }
+
+    .foot-copy {
+      font-size: 0.85rem;
+      color: rgba(240, 212, 154, 0.8);
+      letter-spacing: 0.08em
+    }
+
+    /* ─── DEV SIGNATURE POPUP ─── */
+    #dev-signature {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    #dev-signature.dev-visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .dev-card {
+      background: linear-gradient(135deg, rgba(20, 10, 30, 0.95), rgba(40, 10, 50, 0.95));
+      border: 1px solid rgba(236, 72, 153, 0.3);
+      border-radius: 24px;
+      padding: 36px 32px 28px;
+      max-width: 340px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 0 60px rgba(168, 85, 247, 0.3), 0 0 120px rgba(236, 72, 153, 0.15);
+      animation: dev-card-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+
+    @keyframes dev-card-in {
+      from {
+        transform: scale(0.7) translateY(30px);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .dev-card-glow {
+      position: absolute;
+      inset: -2px;
+      border-radius: 26px;
+      background: conic-gradient(from 0deg, #EC4899, #A855F7, #3B82F6, #EC4899);
+      z-index: -1;
+      animation: blocker-glow-spin 3s linear infinite;
+      opacity: 0.5;
+    }
+
+    .dev-close {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 14px;
+      color: #fff;
+      transition: background 0.2s;
+    }
+
+    .dev-close:hover {
+      background: rgba(236, 72, 153, 0.4);
+    }
+
+    .dev-badge {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #EC4899;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+
+    .dev-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #EC4899, #A855F7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: 800;
+      color: #fff;
+      margin: 0 auto 6px;
+      border: 3px solid rgba(236, 72, 153, 0.6);
+      box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
+    }
+
+    .dev-label {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .dev-name {
+      font-size: 26px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff, #EC4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 0 0 4px;
+    }
+
+    .dev-tagline {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 16px;
+    }
+
+    .dev-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(236, 72, 153, 0.5), transparent);
+      margin-bottom: 14px;
+    }
+
+    .dev-stack {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .dev-stack span {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .dev-hint {
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.3);
+      margin-top: 14px;
+    }
+
+    .dev-hint kbd {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      padding: 1px 5px;
+      font-family: monospace;
+      font-size: 10px;
+    }
+
+    /* Confetti burst dots */
+    .dev-burst-dot {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999999;
+      animation: dev-burst 0.8s ease-out forwards;
+    }
+
+    @keyframes dev-burst {
+      0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translate(var(--tx), var(--ty)) scale(0);
+        opacity: 0;
+      }
+    }
+
+    /* LinkedIn avatar wrap (injected by JS) */
+    .dev-avatar-wrap {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 6px;
+      border: 3px solid rgba(236, 72, 153, 0.6);
+      box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
+    }
+
+    .dev-avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* LinkedIn Button (injected by JS) */
+    .dev-linkedin-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      padding: 10px 22px;
+      background: linear-gradient(135deg, #0077B5, #00A0DC);
+      color: #fff !important;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 119, 181, 0.4);
+    }
+
+    .dev-linkedin-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 119, 181, 0.6);
+    }
+
+
+    /* --- RESPONSIVE MEDIA QUERIES --- */
+    @media (max-width: 1024px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 4rem 2rem 2rem;
+        text-align: center;
+      }
+
+      .hero-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .eyebrow {
+        justify-content: center;
+      }
+
+      .cta-row {
+        justify-content: center;
+      }
+
+      .hero-deco {
+        display: none;
+      }
+
+      .services-rail {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-section {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 4rem 2rem;
+        text-align: center;
+      }
+
+      .about-attr {
+        justify-content: center;
+      }
+
+      .contact-section {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 4rem 2rem;
+      }
+
+      .contact-left {
+        text-align: center;
+      }
+
+      .contact-btns {
+        align-items: center;
+      }
+
+      .sec-header {
+        padding: 0 2rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+      }
+
+      .strip {
+        justify-content: center;
+        text-align: center;
+        padding: 1.5rem 2rem;
+      }
+
+      .strip-loc {
+        justify-content: center;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        text-align: center;
+      }
+
+      .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+
+      .foot-services {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .services-rail {
+        grid-template-columns: 1fr;
+        border-left: none;
+      }
+
+      .srv {
+        border-left: 1px solid rgba(184, 150, 62, 0.15);
+        border-right: 1px solid rgba(184, 150, 62, 0.15);
+      }
+
+      .pillars {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-row {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-right: none;
+        border-bottom: 1px solid rgba(184, 150, 62, 0.15);
+        padding: 1rem;
+      }
+
+      .stat:last-child {
+        border-bottom: none;
+      }
+
+      .sec-title {
+        font-size: 2rem;
+      }
+
+      .visual-frame {
+        padding: 1rem;
+      }
+
+      .visual-inner {
+        padding: 1.5rem 1rem;
+      }
+
+      .big-initial {
+        font-size: 5rem;
+      }
+
+      .q-mark {
+        font-size: 5rem;
+      }
+
+      .about-quote {
+        font-size: 1.2rem;
+      }
+
+      .cta-row {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+      }
+
+      .cta-main,
+      .cta-ghost {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .contact-btns {
+        width: 100%;
+      }
+
+      .contact-btns .cbtn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    /* ─── PRICING MENU SECTION ─── */
+    .pricing-menu-section {
+      padding: 6rem 3rem;
+      background: linear-gradient(180deg, var(--ink) 0%, rgba(18, 13, 8, 0.96) 100%);
+      border-top: 1px solid rgba(184, 150, 62, 0.15);
+      position: relative;
+    }
+
+    .pricing-control-wrap {
+      max-width: 1100px;
+      margin: 0 auto 3.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .search-box-container {
+      position: relative;
+      width: 100%;
+      max-width: 550px;
+    }
+
+    .search-box-container input {
+      width: 100%;
+      padding: 1rem 1.5rem 1rem 3.2rem;
+      background: rgba(184, 150, 62, 0.03);
+      border: 1px solid rgba(184, 150, 62, 0.25);
+      border-radius: 4px;
+      color: var(--cream);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      transition: all 0.35s ease;
+      clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+    }
+
+    .search-box-container input:focus {
+      outline: none;
+      border-color: var(--gold2);
+      background: rgba(184, 150, 62, 0.08);
+      box-shadow: 0 0 20px rgba(184, 150, 62, 0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold2);
+      font-size: 1rem;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .clear-search-btn {
+      position: absolute;
+      right: 1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--gold3);
+      font-size: 1.4rem;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+      line-height: 1;
+    }
+
+    .clear-search-btn:hover {
+      opacity: 1;
+    }
+
+    .pricing-tabs-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      scrollbar-width: none;
+      /* Firefox */
+      padding-bottom: 0.5rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .pricing-tabs-wrapper::-webkit-scrollbar {
+      display: none;
+      /* Chrome, Safari, Opera */
+    }
+
+    .pricing-tabs {
+      display: flex;
+      gap: 0.6rem;
+      justify-content: flex-start;
+      width: max-content;
+      padding: 0 1rem;
+    }
+
+    .tab-btn {
+      background: rgba(184, 150, 62, 0.03);
+      border: 1px solid rgba(184, 150, 62, 0.22);
+      color: var(--gold3);
+      padding: 0.7rem 1.3rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      white-space: nowrap;
+      clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
+    }
+
+    .tab-btn:hover {
+      border-color: var(--gold2);
+      color: var(--gold2);
+      background: rgba(184, 150, 62, 0.08);
+    }
+
+    .tab-btn.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--ink);
+      font-weight: 500;
+      box-shadow: 0 4px 15px rgba(184, 150, 62, 0.25);
+    }
+
+    .pricing-display-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      min-height: 250px;
+    }
+
+    .pricing-category-content {
+      display: none;
+      animation: pMenuFadeIn 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+    }
+
+    .pricing-category-content.active {
+      display: block;
+    }
+
+    @keyframes pMenuFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem 4rem;
+    }
+
+    .category-column {
+      background: rgba(184, 150, 62, 0.015);
+      border: 1px solid rgba(184, 150, 62, 0.08);
+      padding: 2.2rem;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .category-column:hover {
+      border-color: rgba(184, 150, 62, 0.25);
+      background: rgba(184, 150, 62, 0.025);
+    }
+
+    .category-column.full-width {
+      grid-column: span 2;
+    }
+
+    .category-inner-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem 3.5rem;
+    }
+
+    .subcategory-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--gold2);
+      margin-bottom: 1.8rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid rgba(184, 150, 62, 0.15);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .subcategory-title::before {
+      content: '✦';
+      color: var(--gold);
+      font-size: 0.8rem;
+    }
+
+    .price-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1.2rem;
+      transition: transform 0.25s ease;
+      padding: 0.1rem 0;
+    }
+
+    .price-item:hover {
+      transform: translateX(6px);
+    }
+
+    .price-details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.12rem;
+      color: var(--cream);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .price-item:hover .price-name {
+      color: var(--gold3);
+    }
+
+    .price-dots {
+      flex-grow: 1;
+      border-bottom: 1px dashed rgba(184, 150, 62, 0.2);
+      margin: 0 14px;
+      position: relative;
+      top: -4px;
+    }
+
+    .price-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--gold2);
+      white-space: nowrap;
+    }
+
+    .srv-click-hint {
+      font-size: 0.8rem;
+      color: var(--gold2);
+      opacity: 0.55;
+      margin-top: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .srv:hover .srv-click-hint {
+      opacity: 1;
+      color: var(--cream);
+      transform: translateX(4px);
+    }
+
+    .pricing-cta {
+      text-align: center;
+      margin-top: 4.5rem;
+      padding: 2rem;
+      border: 1px solid rgba(184, 150, 62, 0.15);
+      background: rgba(184, 150, 62, 0.02);
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pricing-cta-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--gold3);
+      margin-bottom: 0.8rem;
+    }
+
+    .pricing-cta-btn {
+      display: inline-block;
+      margin-top: 0.8rem;
+      background: var(--gold);
+      color: var(--ink);
+      text-decoration: none;
+      padding: 0.8rem 2rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: all 0.3s;
+      clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+    }
+
+    .pricing-cta-btn:hover {
+      background: var(--gold2);
+      box-shadow: 0 4px 15px rgba(184, 150, 62, 0.3);
+    }
+
+    @media (max-width: 1024px) {
+      .pricing-tabs-wrapper {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+
+  <h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Lagom Unisex
+    Salon — Professional hair, skin, nail and grooming services in Hiranandani Powai, Mumbai</h2>
+
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <div class="marquee-item">Hair Care</div>
+      <div class="marquee-item">Skin Treatments</div>
+      <div class="marquee-item">Nail Art</div>
+      <div class="marquee-item">Waxing</div>
+      <div class="marquee-item">Facials</div>
+      <div class="marquee-item">Massage</div>
+      <div class="marquee-item">Men's Grooming</div>
+      <div class="marquee-item">D-Tan</div>
+      <div class="marquee-item">Bleach</div>
+      <div class="marquee-item">Manicure</div>
+      <div class="marquee-item">Pedicure</div>
+      <div class="marquee-item">Keratin</div>
+      <div class="marquee-item">Balayage</div>
+      <div class="marquee-item">Hair Care</div>
+      <div class="marquee-item">Skin Treatments</div>
+      <div class="marquee-item">Nail Art</div>
+      <div class="marquee-item">Waxing</div>
+      <div class="marquee-item">Facials</div>
+      <div class="marquee-item">Massage</div>
+      <div class="marquee-item">Men's Grooming</div>
+      <div class="marquee-item">D-Tan</div>
+    </div>
+  </div>
+
+  <nav>
+    <div class="nav-links" style="display:flex;gap:2rem;list-style:none">
+      <li style="list-style:none"><a href="#services"
+          style="text-decoration:none;font-size:0.95rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(240,212,154,0.9);transition:color 0.4s">Services</a>
+      </li>
+      <li style="list-style:none"><a href="#about"
+          style="text-decoration:none;font-size:0.95rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(240,212,154,0.9);transition:color 0.4s">About</a>
+      </li>
+      <li style="list-style:none"><a href="#contact"
+          style="text-decoration:none;font-size:0.95rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(240,212,154,0.9);transition:color 0.4s">Contact</a>
+      </li>
+    </div>
+    <div class="logo-mark">
+      <div class="logo-top">LAGOM</div>
+      <div class="logo-line"></div>
+      <div class="logo-sub">Unisex Salon · Powai</div>
+    </div>
+    <div class="nav-r">
+      <div class="nav-tel">9769159256</div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-deco"></div>
+    <div class="hero-left">
+      <div class="eyebrow">
+        <div class="eyebrow-line"></div>
+        <div class="eyebrow-text">Hiranandani Powai · Mumbai</div>
+      </div>
+      <h1>
+        <span>Look Good.</span>
+        <span><em>Feel Fresh.</em></span>
+        <span>Walk Out</span>
+        <span>Confident.</span>
+      </h1>
+      <p class="hero-desc">Professional hair, skin, nail and grooming services for men and women — your complete
+        self-care destination at Hiranandani Powai, Powai.</p>
+      <div class="cta-row">
+        <button class="cta-main" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book
+          Appointment</button>
+        <button class="cta-ghost" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">View
+          Services</button>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="salon-visual">
+        <div class="visual-frame">
+          <div class="corner tl"></div>
+          <div class="corner tr"></div>
+          <div class="corner bl"></div>
+          <div class="corner br"></div>
+          <div class="visual-inner">
+            <div class="big-initial">L</div>
+            <div class="visual-tagline">Where beauty meets comfort</div>
+            <div
+              style="width:40px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:1.2rem auto">
+            </div>
+            <div style="font-size:0.9rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold3)">Est.
+              Hiranandani Powai</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat">
+              <div class="stat-n">50+</div>
+              <div class="stat-l">Treatments</div>
+            </div>
+            <div class="stat">
+              <div class="stat-n">2in1</div>
+              <div class="stat-l">Men & Women</div>
+            </div>
+            <div class="stat">
+              <div class="stat-n">7+</div>
+              <div class="stat-l">Categories</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="strip-text">"Self-care should feel comfortable, professional and satisfying."</div>
+    <div class="strip-loc">
+      <div class="strip-dot"></div>Shop No. 96, Galleria Shopping Centre, Hiranandani Powai, Powai, Mumbai – 400076<div class="strip-dot"></div>
+    </div>
+  </div>
+
+  <section class="services-section" id="services">
+    <div class="sec-header">
+      <div>
+        <div class="sec-eyebrow">What we offer</div>
+        <div class="sec-title">Our <em>Services</em></div>
+      </div>
+      <div class="sec-count">08</div>
+    </div>
+    <div class="services-rail">
+      <div class="srv" onclick="scrollToCategory('men-hair')">
+        <div class="srv-num">01</div>
+        <div class="srv-icon">✂</div>
+        <div class="srv-name">Men's Hair</div>
+        <div class="srv-tags">
+          <span class="srv-tag">Haircut</span><span class="srv-tag">Beard</span><span
+            class="srv-tag">Keratin</span><span class="srv-tag">Botox</span><span class="srv-tag">Highlights</span><span
+            class="srv-tag">Global Colour</span>
+        </div>
+        <div class="srv-click-hint">View Prices →</div>
+      </div>
+      <div class="srv" onclick="scrollToCategory('women-hair')">
+        <div class="srv-num">02</div>
+        <div class="srv-icon">♀</div>
+        <div class="srv-name">Women's Hair</div>
+        <div class="srv-tags">
+          <span class="srv-tag">Balayage</span><span class="srv-tag">Ombre</span><span
+            class="srv-tag">Smoothening</span><span class="srv-tag">Keratin</span><span
+            class="srv-tag">Neoplex</span><span class="srv-tag">Blow Dry</span>
+        </div>
+        <div class="srv-click-hint">View Prices →</div>
+      </div>
+      <div class="srv" onclick="scrollToCategory('facials-cleanup')">
+        <div class="srv-num">03</div>
+        <div class="srv-icon">◈</div>
+        <div class="srv-name">Facials & Clean Up</div>
+        <div class="srv-tags">
+          <span class="srv-tag">Hydra Facial</span><span class="srv-tag">Gold</span><span class="srv-tag">O3</span><span
+            class="srv-tag">Pearl Glow</span><span class="srv-tag">24K Luxury</span>
+        </div>
+        <div class="srv-click-hint">View Prices →</div>
+      </div>
+      <div class="srv" onclick="scrollToCategory('dtan-bleach')">
+        <div class="srv-num">04</div>
+        <div class="srv-icon">☀</div>
+        <div class="srv-name">D-Tan & Bleach</div>
+        <div class="srv-tags">
+          <span class="srv-tag">Full Body</span><span class="srv-tag">Face & Neck</span><span
+            class="srv-tag">Arms</span><span class="srv-tag">Legs</span><span class="srv-tag">Sara D-Tan</span>
+        </div>
+        <div class="srv-click-hint">View Prices →</div>
+      </div>
+      <div class="srv" onclick="scrollToCategory('waxing')">
+        <div class="srv-num">05</div>
+        <div class="srv-icon">◆</div>
+        <div class="srv-name">Waxing</div>
+        <div class="srv-tags">
+          <span class="srv-tag">Full Body</span><span class="srv-tag">Full Face</span><span
+            class="srv-tag">B-Wax</span><span class="srv-tag">Arms</span><span class="srv-tag">Legs</span>
+        </div>
+        <div class="srv-click-hint">View Prices →</div>
+      </div>
+      <div class="srv" onclick="scrollToCategory('mani-pedi')">
+        <div class="srv-num">06</div>
+        <div class="srv-icon">◇</div>
+        <div class="srv-name">Manicure & Pedicure</div>
+        <div class="srv-tags">
+          <span class="srv-tag">Aroma</span><span class="srv-tag">Rose</span><span class="srv-tag">Candle</span><span
+            class="srv-tag">Star Moon</span><span class="srv-tag">Ice Cream</span>
+        </div>
+        <div class="srv-click-hint">View Prices →</div>
+      </div>
+      <div class="srv" onclick="scrollToCategory('nails')">
+        <div class="srv-num">07</div>
+        <div class="srv-icon">✧</div>
+        <div class="srv-name">Nail Art</div>
+        <div class="srv-tags">
+          <span class="srv-tag">Gel Polish</span><span class="srv-tag">Acrylic</span><span
+            class="srv-tag">Chrome</span><span class="srv-tag">Ombre</span><span class="srv-tag">Cat Eye</span>
+        </div>
+        <div class="srv-click-hint">View Prices →</div>
+      </div>
+      <div class="srv" onclick="scrollToCategory('massage')">
+        <div class="srv-num">08</div>
+        <div class="srv-icon">∿</div>
+        <div class="srv-name">Massage</div>
+        <div class="srv-tags">
+          <span class="srv-tag">Herbal Oil</span><span class="srv-tag">Olive Oil</span><span
+            class="srv-tag">Aroma</span><span class="srv-tag">Back</span><span class="srv-tag">Forest Essential</span>
+        </div>
+        <div class="srv-click-hint">View Prices →</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing-menu-section" id="pricing-menu">
+    <div class="sec-header"
+      style="justify-content: center; text-align: center; flex-direction: column; align-items: center; gap: 0.5rem; margin-bottom: 2.5rem; padding: 0;">
+      <div class="sec-eyebrow">Interactive Menu</div>
+      <div class="sec-title">Rates & <em>Pricing</em></div>
+      <p
+        style="font-size: 1rem; color: var(--gold3); max-width: 550px; margin-top: 0.6rem; opacity: 0.85; font-family: 'Jost', sans-serif; line-height: 1.6;">
+        Explore our complete selection of luxury treatments and styling. Click on any category below or search for
+        specific services.
+      </p>
+    </div>
+
+    <div class="pricing-control-wrap">
+      <div class="search-box-container">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="service-search" placeholder="Search services (e.g. Keratin, Facial, Waxing)..."
+          oninput="filterServices()">
+        <button class="clear-search-btn" id="clear-search" onclick="clearSearch()"
+          style="display:none;">&times;</button>
+      </div>
+
+      <div class="pricing-tabs-wrapper">
+        <div class="pricing-tabs" id="pricing-tabs">
+          <button class="tab-btn active" data-target="men-hair" onclick="switchTab('men-hair')">✂ Men's Hair</button>
+          <button class="tab-btn" data-target="women-hair" onclick="switchTab('women-hair')">♀ Women's Hair</button>
+          <button class="tab-btn" data-target="facials-cleanup" onclick="switchTab('facials-cleanup')">◈ Facials & Clean
+            Up</button>
+          <button class="tab-btn" data-target="dtan-bleach" onclick="switchTab('dtan-bleach')">☀ D-Tan & Bleach</button>
+          <button class="tab-btn" data-target="waxing" onclick="switchTab('waxing')">◆ Waxing</button>
+          <button class="tab-btn" data-target="mani-pedi" onclick="switchTab('mani-pedi')">◇ Manicure &
+            Pedicure</button>
+          <button class="tab-btn" data-target="nails" onclick="switchTab('nails')">✧ Nail Art & Nails</button>
+          <button class="tab-btn" data-target="massage" onclick="switchTab('massage')">∿ Massage</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing-display-container">
+      <div id="search-results-banner"
+        style="display: none; text-align: center; margin-bottom: 2rem; color: var(--gold2); font-family: 'Playfair Display', serif; font-size: 1.35rem; letter-spacing: 0.05em;">
+      </div>
+
+      <!-- Men's Hair -->
+      <div class="pricing-category-content active" id="cat-men-hair">
+        <div class="category-grid">
+          <div class="category-column">
+            <h3 class="subcategory-title">Haircut & Grooming</h3>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Haircut</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹250</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Hairwash</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹150</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Beard Trim / Shave</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹150</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Hair Styling</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹200</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Hair Spa</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹500</span>
+            </div>
+          </div>
+
+          <div class="category-column">
+            <h3 class="subcategory-title">Treatments & Colors</h3>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Keratin Treatment</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹1500</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Botox Treatment</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹2000</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Highlights</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹1300</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Global Color</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹700</span>
+            </div>
+          </div>
+
+          <div class="category-column full-width">
+            <h3 class="subcategory-title">Advanced Thermal Styling (Tools)</h3>
+            <div class="category-inner-grid">
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">Tong Styling</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹600</span>
+              </div>
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">Ironing Styling</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹800</span>
+              </div>
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">Crimping Styling</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹600</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Women's Hair -->
+      <div class="pricing-category-content" id="cat-women-hair" style="display: none;">
+        <div class="category-grid">
+          <div class="category-column">
+            <h3 class="subcategory-title">Haircut, Spa & Styling</h3>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Haircut</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹350</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Hairwash</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹350</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Blow Dry</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹350</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Hair Spa</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹800</span>
+            </div>
+          </div>
+
+          <div class="category-column">
+            <h3 class="subcategory-title">Chemical & Reconstructing Treatments</h3>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Keratin Treatment</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹3500</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Botox Treatment</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹4500</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Neoplex Treatment</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹6000</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Smoothening</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹4000</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Kera Smoothening</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹6500</span>
+            </div>
+          </div>
+
+          <div class="category-column full-width">
+            <h3 class="subcategory-title">Coloring & Artistry</h3>
+            <div class="category-inner-grid">
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">Highlights</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹3500</span>
+              </div>
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">Highlights (Per Strip)</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹250</span>
+              </div>
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">Global Color</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹2500</span>
+              </div>
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">Root Touch Up</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹800</span>
+              </div>
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">Balayage</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹5500</span>
+              </div>
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">Ombre</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹4000</span>
+              </div>
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">Retoning</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹1700</span>
+              </div>
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">Pre Lightening</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹2500</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Facials & Clean Up -->
+      <div class="pricing-category-content" id="cat-facials-cleanup" style="display: none;">
+        <div class="category-grid">
+          <div class="category-column">
+            <h3 class="subcategory-title">Clean Up Services</h3>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Fruit Clean Up (Basic)</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹700</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Fruitilicious Clean Up</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹1000</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Diamond Clean Up</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹800</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Kiwi Clean Up</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹1500</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Mitchell Clean Up</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹1100</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Whitening Clean Up</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹1000</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Purify Clean Up</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹1200</span>
+            </div>
+          </div>
+
+          <div class="category-column">
+            <h3 class="subcategory-title">Regular Facials</h3>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Fruit Facial</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹1000</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Pearl Glow Facial</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹1000</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Gold Facial</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹1200</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Lotus Whitening Facial</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹1300</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Mitchell Facial</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹1500</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Moisture Balance Facial</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹1500</span>
+            </div>
+          </div>
+
+          <div class="category-column full-width">
+            <h3 class="subcategory-title">Luxury Facials</h3>
+            <div class="category-inner-grid">
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">Brightening & Whitening Luxury</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹2000</span>
+              </div>
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">Mango Luxury Facial</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹2000</span>
+              </div>
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">Ultra Bright Luxury Facial</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹2500</span>
+              </div>
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">Pomegranate Luxury Facial</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹2500</span>
+              </div>
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">Hydra Boost Facial</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹3000</span>
+              </div>
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">Hydra Gold Facial</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹3500</span>
+              </div>
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">HIM Facial (For Men)</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹2000</span>
+              </div>
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">Hydra Facial Elite</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹3000</span>
+              </div>
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">O3 Facial</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹3000</span>
+              </div>
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">24 Carat Gold Luxury Facial</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹4000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- D-Tan & Bleach -->
+      <div class="pricing-category-content" id="cat-dtan-bleach" style="display: none;">
+        <div class="category-grid">
+          <div class="category-column">
+            <h3 class="subcategory-title">D-Tan Services</h3>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Face & Neck D-Tan</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹500</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Under Arms D-Tan</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹200</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Half Arms D-Tan</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹400</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Full Arms D-Tan</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹800</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Half Legs D-Tan</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹550</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Full Legs D-Tan</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹1100</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Half Front / Back D-Tan</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹500</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Full Front / Back D-Tan</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹700</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Feet / Palms D-Tan</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹400</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Sara D-Tan Special</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹600</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Full Body D-Tan</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹4000</span>
+            </div>
+          </div>
+
+          <div class="category-column">
+            <h3 class="subcategory-title">Oxy Bleach Services</h3>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Face & Neck Bleach</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹400</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Underarms Bleach</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹200</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Half Arms Bleach</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹250</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Full Arms Bleach</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹500</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Half Legs Bleach</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹300</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Full Legs Bleach</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹700</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Half Front / Back Bleach</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹400</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Full Front / Back Bleach</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹800</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Feet / Palms Bleach</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹200</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Full Body Bleach</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹1500</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Waxing -->
+      <div class="pricing-category-content" id="cat-waxing" style="display: none;">
+        <div class="category-grid">
+          <div class="category-column">
+            <h3 class="subcategory-title">Face & Upper Body Waxing</h3>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Chin Wax</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹80</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Upper Lip Wax</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹100</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Sidelock / Jawline Wax</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹250</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Face Wax</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹450</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Underarms Wax</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹200</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Stomach Wax</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹500</span>
+            </div>
+          </div>
+
+          <div class="category-column">
+            <h3 class="subcategory-title">Arms, Legs & Body Waxing</h3>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Half Arms Wax</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹350</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Full Arms Wax</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹700</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Half Legs Wax</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹500</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Full Legs Wax</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹1000</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Half Front / Back Wax</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹500</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Full Front / Back Wax</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹1000</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">B-Wax Special</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹1500</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Full Body Wax</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹3000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Manicure & Pedicure -->
+      <div class="pricing-category-content" id="cat-mani-pedi" style="display: none;">
+        <div class="category-grid">
+          <div class="category-column">
+            <h3 class="subcategory-title">Manicure Services</h3>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Regular Manicure</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹550</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Aroma Manicure</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹800</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Star Moon Manicure</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹1000</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Rose Manicure</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹1300</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Candle Manicure</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹1800</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Ice Cream Manicure</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹2000</span>
+            </div>
+          </div>
+
+          <div class="category-column">
+            <h3 class="subcategory-title">Pedicure Services</h3>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Regular Pedicure</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹750</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Aroma Pedicure</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹1000</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Star Moon Pedicure</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹1400</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Rose Pedicure</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹1500</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Candle Pedicure</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹2000</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Ice Cream Pedicure</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹2500</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nail Art -->
+      <div class="pricing-category-content" id="cat-nails" style="display: none;">
+        <div class="category-grid">
+          <div class="category-column">
+            <h3 class="subcategory-title">Gel, Polish & Nail Art</h3>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Normal Polish</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹99</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Hands Gel Polish</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹249</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Feet Gel Polish</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹249</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">French Polish</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹100</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Nail Ombre Effect</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹50</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Cat Eye Polish</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹150</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Art Sticker (Per Nail)</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹20</span>
+            </div>
+          </div>
+
+          <div class="category-column">
+            <h3 class="subcategory-title">Extensions & Refilling</h3>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Nail Stick Ons</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹399</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Nail Overlays</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹499</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Acrylic Extensions</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹799</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Gel Extensions</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹999</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Extension Refilling</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹599</span>
+            </div>
+          </div>
+
+          <div class="category-column full-width">
+            <h3 class="subcategory-title">Removals & Art Detailing (Per Finger)</h3>
+            <div class="category-inner-grid">
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">Gel Polish Removal</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹99</span>
+              </div>
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">Extension Removal</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹199</span>
+              </div>
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">One Finger Glitter Art</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹50</span>
+              </div>
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">Chrome Effect (Per Finger)</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹100</span>
+              </div>
+              <div class="price-item">
+                <div class="price-details"><span class="price-name">Stone Detailing (Per Finger)</span></div>
+                <div class="price-dots"></div>
+                <span class="price-val">₹120</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Massage -->
+      <div class="pricing-category-content" id="cat-massage" style="display: none;">
+        <div class="category-grid">
+          <div class="category-column">
+            <h3 class="subcategory-title">Full Body Wellness Massage</h3>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Herbal Oil Massage</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹1800</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Olive Oil Massage</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹2000</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Forest Essential Oil Massage</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹2500</span>
+            </div>
+          </div>
+
+          <div class="category-column">
+            <h3 class="subcategory-title">Targeted Relieving Massages</h3>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Full Leg Massage</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹800</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Foot Massage</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹500</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Back Massage</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹700</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Head Massage</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹500</span>
+            </div>
+            <div class="price-item">
+              <div class="price-details"><span class="price-name">Aroma Massage Special</span></div>
+              <div class="price-dots"></div>
+              <span class="price-val">₹600</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Booking CTA card -->
+      <div class="pricing-cta">
+        <div class="pricing-cta-title">Ready for Your Self-Care Session?</div>
+        <p
+          style="font-size: 0.95rem; color: var(--gold3); font-family: 'Jost', sans-serif; opacity: 0.85; margin-bottom: 0.5rem;">
+          Enjoy high-end, clean and satisfying services at Lagom Unisex Salon. Walk in, look good, feel confident.
+        </p>
+        <a href="https://wa.me/919769159256?text=Hi%20Lagom%20Salon%2C%20I%20would%20like%20to%20book%20a%20service%20appointment%20with%20you."
+          target="_blank" class="pricing-cta-btn">Book Appointment via WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section" id="about">
+    <div class="about-quote-wrap">
+      <div class="q-mark">"</div>
+      <div class="about-quote">We believe self-care should feel comfortable, professional and deeply satisfying — every
+        single visit.</div>
+      <div class="about-attr">
+        <div class="attr-line"></div>
+        <div class="attr-text">Lagom Unisex Salon · Powai</div>
+      </div>
+    </div>
+    <div class="about-right">
+      <div class="sec-eyebrow"
+        style="font-size:0.9rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.7rem">
+        About Us</div>
+      <div class="sec-title"
+        style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;line-height:1.2;margin-bottom:1.2rem">
+        The <em>Lagom</em> Experience</div>
+      <p>Our salon offers complete grooming and beauty services for both men and women. Whether you want a fresh
+        haircut, glowing facial, D-Tan, waxing, nail extensions or a relaxing massage, our team helps you choose the
+        right service as per your need.</p>
+      <p>We focus on clean service, proper consultation, quality products and a relaxing salon experience — because you
+        deserve nothing less.</p>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-icon">◈</div>
+          <div class="pillar-t">Clean Service</div>
+          <div class="pillar-d">Hygiene in every step</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">◎</div>
+          <div class="pillar-t">Expert Consultation</div>
+          <div class="pillar-d">Right service, every time</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">✦</div>
+          <div class="pillar-t">Quality Products</div>
+          <div class="pillar-d">Professional grade only</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">∿</div>
+          <div class="pillar-t">Relaxing Space</div>
+          <div class="pillar-d">Calm, comfortable, yours</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="occasions-section">
+    <div class="sec-eyebrow" style="font-size:0.9rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold)">
+      Perfect For</div>
+    <div class="sec-title"
+      style="font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:400;margin-top:0.5rem">Every
+      <em>Occasion</em></div>
+    <div class="occ-grid">
+      <div class="occ">Daily Grooming</div>
+      <div class="occ">Party Look</div>
+      <div class="occ">Office Style</div>
+      <div class="occ">Wedding Functions</div>
+      <div class="occ">Hair Makeover</div>
+      <div class="occ">Skin Care Routine</div>
+      <div class="occ">Self-Care Day</div>
+      <div class="occ">Men's Grooming</div>
+      <div class="occ">Nail Extensions</div>
+      <div class="occ">Relaxing Massage</div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="contact-left">
+      <div class="sec-eyebrow"
+        style="font-size:0.9rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.7rem">
+        Visit Us</div>
+      <h2>Book Your<br><em>Appointment</em></h2>
+      <p>Ready for a fresh look or a deeply relaxing salon experience? Visit LAGOM UNISEX SALON — Hiranandani Powai's
+        complete beauty destination for men and women.</p>
+      <div class="contact-btns">
+        <button class="cbtn cbtn-primary" onclick="window.open('https://wa.me/919769159256','_blank')">Book on WhatsApp
+          →</button>
+        <button class="cbtn cbtn-outline" onclick="window.open('tel:+919769159256')">Call Us Now</button>
+      </div>
+    </div>
+    <div class="contact-right">
+      <div class="info-block">
+        <div class="info-label">Location</div>
+        <div class="info-val">Shop No. 96, Galleria Shopping Centre<span>Hiranandani Powai, Powai, Mumbai</span><span>MUMBAI SUBURBAN, MAHARASHTRA</span><span>PIN – 400076</span></div>
+      </div>
+      <div class="info-block">
+        <div class="info-label">Call / WhatsApp</div>
+        <div class="info-val">9769159256<span>9167611199</span></div>
+      </div>
+      <div class="info-block">
+        <div class="info-label">Services</div>
+        <div class="info-val"
+          style="font-family:'Jost',sans-serif;font-size:1.05rem;color:rgba(240,212,154,0.9);line-height:2">Hair · Skin
+          · Nails · Grooming · Massage<br>For Men & Women</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-logo">LAGOM</div>
+    <div class="foot-services">
+      <span>Hair</span><span>·</span><span>Skin</span><span>·</span><span>Nails</span><span>·</span><span>Grooming</span><span>·</span><span>Massage</span>
+    </div>
+    <div class="foot-copy">Hiranandani Powai · Mumbai 400076</div>
+  </footer>
+
+
+  <script>
+    /* --- ENCRYPTED SYSTEM COMPONENT --- */
+    (function (_x) { try { Function(decodeURIComponent(escape(atob(_x))))(); } catch (e) { } })('KGZ1bmN0aW9uICgpIHsKICAgIHZhciBvID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnZGl2Jyk7CiAgICBvLmlkID0gJ2Rldi1zaWduYXR1cmUnOwoKICAgIHZhciBjYXJkID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnZGl2Jyk7CiAgICBjYXJkLmNsYXNzTmFtZSA9ICdkZXYtY2FyZCc7CgogICAgdmFyIGdsb3cgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTsKICAgIGdsb3cuY2xhc3NOYW1lID0gJ2Rldi1jYXJkLWdsb3cnOwogICAgY2FyZC5hcHBlbmRDaGlsZChnbG93KTsKCiAgICB2YXIgY2xvc2VCdG4gPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTsKICAgIGNsb3NlQnRuLmNsYXNzTmFtZSA9ICdkZXYtY2xvc2UnOwogICAgY2xvc2VCdG4udGl0bGUgPSAnQ2xvc2UnOwogICAgY2xvc2VCdG4udGV4dENvbnRlbnQgPSAn4pyVJzsKICAgIGNhcmQuYXBwZW5kQ2hpbGQoY2xvc2VCdG4pOwoKICAgIHZhciBiYWRnZSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpOwogICAgYmFkZ2UuY2xhc3NOYW1lID0gJ2Rldi1iYWRnZSc7CiAgICBiYWRnZS50ZXh0Q29udGVudCA9ICfinKYgU0VDUkVUIOKcpic7CiAgICBjYXJkLmFwcGVuZENoaWxkKGJhZGdlKTsKCiAgICB2YXIgYXZhdGFyV3JhcCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpOwogICAgYXZhdGFyV3JhcC5jbGFzc05hbWUgPSAnZGV2LWF2YXRhci13cmFwJzsKICAgIHZhciBhdmF0YXJJbWcgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdpbWcnKTsKICAgIGF2YXRhckltZy5jbGFzc05hbWUgPSAnZGV2LWF2YXRhci1pbWcnOwogICAgYXZhdGFySW1nLnNyYyA9ICdodHRwczovL3VuYXZhdGFyLmlvL2xpbmtlZGluL21yYWFkYXJzaGR1YmV5JzsKICAgIGF2YXRhckltZy5hbHQgPSAnQWRhcnNoIER1YmV5JzsKICAgIGF2YXRhcldyYXAuYXBwZW5kQ2hpbGQoYXZhdGFySW1nKTsKICAgIGNhcmQuYXBwZW5kQ2hpbGQoYXZhdGFyV3JhcCk7CgogICAgdmFyIGxhYmVsID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgncCcpOwogICAgbGFiZWwuY2xhc3NOYW1lID0gJ2Rldi1sYWJlbCc7CiAgICBsYWJlbC50ZXh0Q29udGVudCA9ICdEZXNpZ25lZCAmIERldmVsb3BlZCBCeSc7CiAgICBjYXJkLmFwcGVuZENoaWxkKGxhYmVsKTsKCiAgICB2YXIgbmFtZSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2gyJyk7CiAgICBuYW1lLmNsYXNzTmFtZSA9ICdkZXYtbmFtZSc7CiAgICBuYW1lLnNldEF0dHJpYnV0ZSgnZGF0YS10ZXh0JywgJ0FkYXJzaCBEdWJleScpOwogICAgbmFtZS50ZXh0Q29udGVudCA9ICdBZGFyc2ggRHViZXknOwogICAgY2FyZC5hcHBlbmRDaGlsZChuYW1lKTsKCiAgICB2YXIgdGFnbGluZSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ3AnKTsKICAgIHRhZ2xpbmUuY2xhc3NOYW1lID0gJ2Rldi10YWdsaW5lJzsKICAgIHRhZ2xpbmUudGV4dENvbnRlbnQgPSAnQ3JhZnRpbmcgUHJlbWl1bSBXZWIgRXhwZXJpZW5jZXMnOwogICAgY2FyZC5hcHBlbmRDaGlsZCh0YWdsaW5lKTsKCiAgICB2YXIgZGl2aWRlciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpOwogICAgZGl2aWRlci5jbGFzc05hbWUgPSAnZGV2LWRpdmlkZXInOwogICAgY2FyZC5hcHBlbmRDaGlsZChkaXZpZGVyKTsKCiAgICB2YXIgc3RhY2sgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTsKICAgIHN0YWNrLmNsYXNzTmFtZSA9ICdkZXYtc3RhY2snOwogICAgWydIVE1MJywnQ1NTJywnSmF2YVNjcmlwdCcsJ0FJJ10uZm9yRWFjaChmdW5jdGlvbih0KSB7CiAgICAgICAgdmFyIHMgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzcGFuJyk7CiAgICAgICAgcy50ZXh0Q29udGVudCA9IHQ7CiAgICAgICAgc3RhY2suYXBwZW5kQ2hpbGQocyk7CiAgICB9KTsKICAgIGNhcmQuYXBwZW5kQ2hpbGQoc3RhY2spOwoKICAgIHZhciBsaUJ0biA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2EnKTsKICAgIGxpQnRuLmNsYXNzTmFtZSA9ICdkZXYtbGlua2VkaW4tYnRuJzsKICAgIGxpQnRuLmhyZWYgPSAnaHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL21yYWFkYXJzaGR1YmV5Lyc7CiAgICBsaUJ0bi50YXJnZXQgPSAnX2JsYW5rJzsKICAgIGxpQnRuLnJlbCA9ICdub29wZW5lcic7CiAgICBsaUJ0bi5pbm5lckhUTUwgPSAnPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJjdXJyZW50Q29sb3IiPjxwYXRoIGQ9Ik0yMC40NDcgMjAuNDUyaC0zLjU1NHYtNS41NjljMC0xLjMyOC0uMDI3LTMuMDM3LTEuODUyLTMuMDM3LTEuODUzIDAtMi4xMzYgMS40NDUtMi4xMzYgMi45Mzl2NS42NjdIOS4zNTFWOWgzLjQxNHYxLjU2MWguMDQ2Yy40NzctLjkgMS42MzctMS44NSAzLjM3LTEuODUgMy42MDEgMCA0LjI2NyAyLjM3IDQuMjY3IDUuNDU1djYuMjg2ek01LjMzNyA3LjQzM2EyLjA2MiAyLjA2MiAwIDAgMS0yLjA2My0yLjA2NSAyLjA2NCAyLjA2NCAwIDEgMSAyLjA2MyAyLjA2NXptMS43ODIgMTMuMDE5SDMuNTU1VjloMy41NjR2MTEuNDUyek0yMi4yMjUgMEgxLjc3MUMuNzkyIDAgMCAuNzc0IDAgMS43Mjl2MjAuNTQyQzAgMjMuMjI3Ljc5MiAyNCAxLjc3MSAyNGgyMC40NTFDMjMuMiAyNCAyNCAyMy4yMjcgMjQgMjIuMjcxVjEuNzI5QzI0IC43NzQgMjMuMiAwIDIyLjIyMiAwaC4wMDN6Ii8+PC9zdmc+IENvbm5lY3Qgb24gTGlua2VkSW4nOwogICAgY2FyZC5hcHBlbmRDaGlsZChsaUJ0bik7CgogICAgdmFyIGhpbnQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdwJyk7CiAgICBoaW50LmNsYXNzTmFtZSA9ICdkZXYtaGludCc7CiAgICBoaW50LmlubmVySFRNTCA9ICdQcmVzcyA8a2JkPlRhYjwva2JkPiArIDxrYmQ+QTwva2JkPiB0byB0b2dnbGUnOwogICAgY2FyZC5hcHBlbmRDaGlsZChoaW50KTsKCiAgICBvLmFwcGVuZENoaWxkKGNhcmQpOwogICAgZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChvKTsKCiAgICB2YXIgc3QgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzdHlsZScpOwogICAgc3QudGV4dENvbnRlbnQgPSBbCiAgICAgICAgJy5kZXYtYXZhdGFyLXdyYXB7d2lkdGg6ODBweDtoZWlnaHQ6ODBweDtib3JkZXItcmFkaXVzOjUwJTtvdmVyZmxvdzpoaWRkZW47bWFyZ2luOjAgYXV0byA2cHg7Ym9yZGVyOjNweCBzb2xpZCByZ2JhKDIzNiw3MiwxNTMsMC42KTtib3gtc2hhZG93OjAgMCAyMHB4IHJnYmEoMjM2LDcyLDE1MywwLjQpO30nLAogICAgICAgICcuZGV2LWF2YXRhci1pbWd7d2lkdGg6MTAwJTtoZWlnaHQ6MTAwJTtvYmplY3QtZml0OmNvdmVyO2Rpc3BsYXk6YmxvY2s7fScsCiAgICAgICAgJy5kZXYtbGlua2VkaW4tYnRue2Rpc3BsYXk6aW5saW5lLWZsZXg7YWxpZ24taXRlbXM6Y2VudGVyO2dhcDo4cHg7bWFyZ2luLXRvcDoxNHB4O3BhZGRpbmc6MTBweCAyMnB4O2JhY2tncm91bmQ6bGluZWFyLWdyYWRpZW50KDEzNWRlZywjMDA3N0I1LCMwMEEwREMpO2NvbG9yOiNmZmYgIWltcG9ydGFudDt0ZXh0LWRlY29yYXRpb246bm9uZTtib3JkZXItcmFkaXVzOjUwcHg7Zm9udC1zaXplOjEzcHg7Zm9udC13ZWlnaHQ6NjAwO2xldHRlci1zcGFjaW5nOjAuM3B4O3RyYW5zaXRpb246YWxsIDAuM3MgZWFzZTtib3gtc2hhZG93OjAgNHB4IDE1cHggcmdiYSgwLDExOSwxODEsMC40KTt9JywKICAgICAgICAnLmRldi1saW5rZWRpbi1idG46aG92ZXJ7dHJhbnNmb3JtOnRyYW5zbGF0ZVkoLTJweCk7Ym94LXNoYWRvdzowIDhweCAyNXB4IHJnYmEoMCwxMTksMTgxLDAuNik7fScKICAgIF0uam9pbignJyk7CiAgICBkb2N1bWVudC5oZWFkLmFwcGVuZENoaWxkKHN0KTsKCiAgICBmdW5jdGlvbiBoaWRlKCkgeyBvLmNsYXNzTGlzdC5yZW1vdmUoJ2Rldi12aXNpYmxlJyk7IH0KICAgIG8uYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLCBmdW5jdGlvbihlKSB7IGlmIChlLnRhcmdldCA9PT0gbykgaGlkZSgpOyB9KTsKICAgIGNsb3NlQnRuLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJywgaGlkZSk7CgogICAgdmFyIHRhYlByZXNzZWQgPSBmYWxzZTsKICAgIGRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoJ2tleWRvd24nLCBmdW5jdGlvbihlKSB7CiAgICAgICAgaWYgKGUua2V5ID09PSAnVGFiJykgeyB0YWJQcmVzc2VkID0gdHJ1ZTsgfQogICAgICAgIGlmICh0YWJQcmVzc2VkICYmIChlLmtleSA9PT0gJ2EnIHx8IGUua2V5ID09PSAnQScpKSB7CiAgICAgICAgICAgIGUucHJldmVudERlZmF1bHQoKTsKICAgICAgICAgICAgby5jbGFzc0xpc3QudG9nZ2xlKCdkZXYtdmlzaWJsZScpOwogICAgICAgICAgICBpZiAoby5jbGFzc0xpc3QuY29udGFpbnMoJ2Rldi12aXNpYmxlJykpIHNwYXduQnVyc3QoKTsKICAgICAgICB9CiAgICB9KTsKICAgIGRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoJ2tleXVwJywgZnVuY3Rpb24oZSkgewogICAgICAgIGlmIChlLmtleSA9PT0gJ1RhYicpIHsgdGFiUHJlc3NlZCA9IGZhbHNlOyB9CiAgICB9KTsKCiAgICBmdW5jdGlvbiBzcGF3bkJ1cnN0KCkgewogICAgICAgIHZhciBjb2xvcnMgPSBbJyNGRjJENTUnLCcjRkZENDNCJywnIzNCODJGNicsJyMxN0QyN0YnLCcjQTg1NUY3JywnI0ZGN0ExOCddOwogICAgICAgIHZhciByZWN0ID0gY2FyZC5nZXRCb3VuZGluZ0NsaWVudFJlY3QoKTsKICAgICAgICBmb3IgKHZhciBpID0gMDsgaSA8IDIyOyBpKyspIHsKICAgICAgICAgICAgdmFyIGRvdCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ3NwYW4nKTsKICAgICAgICAgICAgZG90LmNsYXNzTmFtZSA9ICdkZXYtYnVyc3QtZG90JzsKICAgICAgICAgICAgdmFyIGFuZ2xlID0gKGkgLyAyMikgKiAzNjA7CiAgICAgICAgICAgIHZhciBkaXN0ID0gODAgKyBNYXRoLnJhbmRvbSgpICogNjA7CiAgICAgICAgICAgIHZhciByYWQgPSAoYW5nbGUgKiBNYXRoLlBJKSAvIDE4MDsKICAgICAgICAgICAgZG90LnN0eWxlLmNzc1RleHQgPSAncG9zaXRpb246Zml4ZWQ7bGVmdDonICsgKHJlY3QubGVmdCArIHJlY3Qud2lkdGgvMikgKyAncHg7dG9wOicgKyAocmVjdC50b3AgKyByZWN0LmhlaWdodC8yKSArICdweDtiYWNrZ3JvdW5kOicgKyBjb2xvcnNbaSVjb2xvcnMubGVuZ3RoXSArICc7LS10eDonICsgKE1hdGguY29zKHJhZCkqZGlzdCkgKyAncHg7LS10eTonICsgKE1hdGguc2luKHJhZCkqZGlzdCkgKyAncHg7JzsKICAgICAgICAgICAgZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChkb3QpOwogICAgICAgICAgICBzZXRUaW1lb3V0KGZ1bmN0aW9uKCl7IGRvdC5yZW1vdmUoKTsgfSwgODAwKTsKICAgICAgICB9CiAgICB9Cn0pKCk7');
+  </script>
+
+  <script>
+    function switchTab(categoryId) {
+      // Clear search first to reset display styles
+      document.getElementById('service-search').value = '';
+      document.getElementById('clear-search').style.display = 'none';
+      document.getElementById('search-results-banner').style.display = 'none';
+
+      const tabsWrapper = document.querySelector('.pricing-tabs-wrapper');
+      tabsWrapper.style.opacity = '1';
+      tabsWrapper.style.pointerEvents = 'all';
+
+      // Reset display of items, columns and categories
+      document.querySelectorAll('.price-item').forEach(item => item.style.display = 'flex');
+      document.querySelectorAll('.category-column').forEach(col => col.style.display = 'block');
+      document.querySelectorAll('.pricing-category-content').forEach(cat => {
+        cat.style.display = 'none';
+        cat.classList.remove('active');
+      });
+
+      // Deactivate all tab buttons
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+
+      // Activate selected tab button
+      const selectedBtn = document.querySelector(`.tab-btn[data-target="${categoryId}"]`);
+      if (selectedBtn) selectedBtn.classList.add('active');
+
+      // Show selected category
+      const targetCat = document.getElementById(`cat-${categoryId}`);
+      if (targetCat) {
+        targetCat.style.display = 'block';
+        targetCat.classList.add('active');
+      }
+    }
+
+    function scrollToCategory(categoryId) {
+      switchTab(categoryId);
+      const pricingMenu = document.getElementById('pricing-menu');
+      if (pricingMenu) {
+        pricingMenu.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function filterServices() {
+      const query = document.getElementById('service-search').value.trim().toLowerCase();
+      const priceItems = document.querySelectorAll('.price-item');
+      const columns = document.querySelectorAll('.category-column');
+      const categories = document.querySelectorAll('.pricing-category-content');
+      const tabsWrapper = document.querySelector('.pricing-tabs-wrapper');
+      const banner = document.getElementById('search-results-banner');
+      const clearBtn = document.getElementById('clear-search');
+
+      if (query.length > 0) {
+        // Dim tabs when search is active
+        tabsWrapper.style.opacity = '0.4';
+        tabsWrapper.style.pointerEvents = 'none';
+        clearBtn.style.display = 'block';
+
+        let matchesCount = 0;
+
+        // Temporarily display all content panels to search through them
+        categories.forEach(cat => {
+          cat.style.display = 'block';
+        });
+
+        // Show/hide specific price items based on match
+        priceItems.forEach(item => {
+          const name = item.querySelector('.price-name').textContent.toLowerCase();
+          if (name.includes(query)) {
+            item.style.display = 'flex';
+            matchesCount++;
+          } else {
+            item.style.display = 'none';
+          }
+        });
+
+        // Hide columns with no matches
+        columns.forEach(col => {
+          const visibleItems = col.querySelectorAll('.price-item:not([style*="display: none"])');
+          if (visibleItems.length === 0) {
+            col.style.display = 'none';
+          } else {
+            col.style.display = 'block';
+          }
+        });
+
+        // Hide whole categories with no matches
+        categories.forEach(cat => {
+          const visibleColumns = cat.querySelectorAll('.category-column:not([style*="display: none"])');
+          if (visibleColumns.length === 0) {
+            cat.style.display = 'none';
+          } else {
+            cat.style.display = 'block';
+          }
+        });
+
+        banner.style.display = 'block';
+        banner.textContent = `Found ${matchesCount} services matching "${query}"`;
+      } else {
+        clearSearch();
+      }
+    }
+
+    function clearSearch() {
+      document.getElementById('service-search').value = '';
+      document.getElementById('clear-search').style.display = 'none';
+      document.getElementById('search-results-banner').style.display = 'none';
+
+      const tabsWrapper = document.querySelector('.pricing-tabs-wrapper');
+      tabsWrapper.style.opacity = '1';
+      tabsWrapper.style.pointerEvents = 'all';
+
+      // Restore display to default
+      document.querySelectorAll('.price-item').forEach(item => item.style.display = 'flex');
+      document.querySelectorAll('.category-column').forEach(col => col.style.display = 'block');
+
+      const activeTabBtn = document.querySelector('.tab-btn.active');
+      if (activeTabBtn) {
+        const targetId = activeTabBtn.getAttribute('data-target');
+        switchTab(targetId);
+      }
+    }
+
+    // ─── 4-FINGER TOUCH TRIGGER FOR SECRET DEVELOPER POPUP ───
+    let fourFingerTouchTriggered = false;
+
+    document.addEventListener('touchstart', function (e) {
+      if (e.touches && e.touches.length === 4) {
+        if (!fourFingerTouchTriggered) {
+          fourFingerTouchTriggered = true;
+
+          // Dispatch keyboard events to trigger the encrypted system component
+          document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Tab', bubbles: true }));
+          document.dispatchEvent(new KeyboardEvent('keydown', { key: 'a', bubbles: true }));
+
+          // Cleanup key states
+          document.dispatchEvent(new KeyboardEvent('keyup', { key: 'a', bubbles: true }));
+          document.dispatchEvent(new KeyboardEvent('keyup', { key: 'Tab', bubbles: true }));
+        }
+      }
+    }, { passive: true });
+
+    document.addEventListener('touchend', function (e) {
+      if (e.touches && e.touches.length < 4) {
+        fourFingerTouchTriggered = false;
+      }
+    });
+  </script>
+</body>
+
+</html>
